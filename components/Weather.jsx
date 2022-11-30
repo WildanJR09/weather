@@ -3,8 +3,8 @@ import React from 'react';
 
 const Weather = ({ data }) => {
 
-  var temp = data.main.temp.toFixed(0)
-  var temps = data.main.feels_like.toFixed(0)
+  var temp = (data.main.temp - 32) * 5 / 9
+  var feels = (data.main.feels_like - 32) * 5 / 9
 
   console.log(data);
   return (
@@ -20,7 +20,7 @@ const Weather = ({ data }) => {
           />
           <p className='text-2xl'>{data.weather[0].main}</p>
         </div>
-        <p className='text-9xl'>{temp}&#176; F</p>
+        <p className='text-9xl'>{temp.toFixed(0)}&#176; C</p>
       </div>
       {/* Bottom */}
 
@@ -28,7 +28,7 @@ const Weather = ({ data }) => {
         <p className='text-2xl text-center pb-6'>Weather in {data.name}</p>
         <div className='flex justify-between text-center'>
           <div>
-            <p className='font-bold text-2xl'>{temps}&#176; F</p>
+            <p className='font-bold text-2xl'>{feels.toFixed(0)}&#176; C</p>
             <p className='text-xl'>Feels Like</p>
           </div>
           <div>
