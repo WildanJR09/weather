@@ -6,7 +6,7 @@ const Weather = ({ data }) => {
   var temp = (data.main.temp - 32) * 5 / 9
   var feels = (data.main.feels_like - 32) * 5 / 9
 
-  console.log(data);
+  // console.log(data);
   return (
     <div className='relative flex flex-col justify-between max-w-[500px] w-full h-[90vh] m-auto p-4 text-gray-300 z-10'>
       {/* Top */}
